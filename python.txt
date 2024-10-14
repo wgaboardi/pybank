@@ -1,0 +1,126 @@
+class Bicicleta
+def __init_(self)
+def __str_(self)
+
+self.__class__.__name__
+self.__dict__.items()
+
+def nomedoMetodo()
+
+.join([f'{chave}={valor}' for chave,valor in self.__dict__.items()])
+
+
+Bicicleta.buzinar(b2)
+b2.buzinar
+
+def __del__(self)
+  print('removendo instancia')
+# automatico após finalizar o uso do objeto
+
+def __init__(self, cor, placa, numero_rodas, carregado):
+   super().__init__(cor,placa,numero_rodas) #passa para o construtor pai
+   self.carregado = carregado
+
+class Mamifero(Animal):
+   def __init__(self, cor_pelo, **kw) #pega os parametros por nome e passa para o pai
+     super().__init__(**kw) ou super().__init__(nro_patas=kw["nro_patas"))
+
+class Ornitorrinco(Mamifero, Ave)
+  print(Ornitorrinco.__mro__) #imprime ordem de instanciacao das classes
+
+orni = Ornitorrinco(nro_patas=2, cor_pelo="vermelho", cor_bico="amarelo") #passar de forma nomeada por causa do **kw
+
+__init__(self):
+  print(self.mro())
+  print(Ornitorrinco.mro())
+
+def FalarMixin:
+  print('estou falando')
+
+class Ornitorrinco(Mamifero, Aves, FalarMixin):  #como se fosse uma implementacao para o FalarMixin
+
+usar _ em atributos que sao privados, pois nao existe palavra reservada em python
+
+
+criar atributos
+
+def  __init__(self, x=None):
+ self._x = x
+
+
+@x.setter #para alterar o valor
+def x(self, value):
+  self._x +=value
+
+@x.deleter
+  def x(self):
+    self._x = -1
+del foo.x
+
+
+@property - para retornar valores privados, por exemplo
+def x(self):
+ return self._x or 0
+
+parecido como
+get_x()
+ return self._x
+
+
+--- poliformismo
+
+class Passaro
+  def voar(self)
+
+
+class Pardal(Passaro)
+  def voar(self)
+    print ("Pardal voa")
+
+class Avestruz(Passaro)
+  def voar(self)
+    print ("Avestruz voa")
+
+def plano_de_voo(obj)
+  obj.voar() 
+
+plano_de_voo(Passaro())
+plano_de_voo(Avestruz())
+
+
+class Escola
+  nome_da_escola="Xyz"
+
+
+a = Escola()
+a.nome_da_escola="zzz"
+
+class pessoa:
+@classmethod #transformar em metodo da classe (pois precisa modificar/ instancia da classe)
+def criar_de_data_nascimento(cls, ano, mes, dia, nome): #convenção cls
+   idade = ...
+   return cls(nome, idade)
+
+@staticmethod #nao precisa modificar instancia da classe
+def e_maior_idade(idade):
+  return idade>= 18
+
+Pessoa.e_maior_idade(1)
+
+Interface usa classe abstrata # para isso importar a classe abc
+
+class ControleRemoto(ABC)
+@abstractmethod #para obrigar a implementar o metodo na classe filha
+def ligar(self):
+
+@abstractproperty
+@property
+def marca(self): #filha deve implementar a propriedade marca @property
+class ControleTV(ControleRemoto)
+
+
+
+
+P = Pessoa().criar... 
+P = Pessoa.criar_de_data_nascimento(1994, 3,21, "gui")
+print (p.nome, p.idade)
